@@ -1,0 +1,10 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    "**/reportWebVitals.js": true,
+    "**/package-lock.json": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  }
+}
