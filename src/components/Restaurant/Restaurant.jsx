@@ -5,10 +5,10 @@ import Spinner from '../Spinner/Spinner'
 const Restaurant = () => {
   const [searchText, setSearchText] = useState('')
   const [meals, setMeals] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setLoading(true)
+    // setLoading(true) //?without this loading animation will show only once for initial fetch
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`
     fetch(url)
       .then((res) => res.json())
@@ -22,8 +22,10 @@ const Restaurant = () => {
     setSearchText(e.target.value)
   }
   return (
-    
-     
+    <>
+      {loading ? (
+        <Spinner />
+      ) : (
         <div className='bg-[#1B2021] pt-8 text-white'>
           <div className='text-center'>
             <h1 className='text-3xl font-bold'>Search Meal by Name</h1>
@@ -40,7 +42,8 @@ const Restaurant = () => {
             ))}
           </div>
         </div>
-     
+      )}
+    </>
   )
 }
 
