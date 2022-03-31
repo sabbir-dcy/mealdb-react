@@ -46,7 +46,7 @@ const MealDetails = () => {
               <h2 className='text-3xl font-semibold'>
                 Cooking instruction for {strMeal}
               </h2>
-              <p className='text-xl mt-12'>{strInstructions}</p>
+              <p className='text-xl mt-8'>{strInstructions}</p>
               <div className='mt-5'>
                 <LoadIngrediants meal={meal}></LoadIngrediants>
               </div>

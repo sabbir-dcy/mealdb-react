@@ -34,7 +34,7 @@ const Meals = ({ meal }) => {
         to={`/restaurant/${id}`}
         className='bg-[#2a2d36] w-full py-4 text-lg font-semibold text-center hover:bg-gray-600 transition-colors'
       >
-        details
+        Details
       </Link>
     </motion.div>
   )
