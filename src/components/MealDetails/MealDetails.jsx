@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Spinner from '../Spinner/Spinner'
+import { motion } from 'framer-motion'
 
 const MealDetails = () => {
   const { id } = useParams()
@@ -24,26 +25,35 @@ const MealDetails = () => {
 
   return (
     <>
-    {
-      loading ? (<Spinner></Spinner>) : (
-      <div className='bg-[#1B2021] h-screen grid content-center'>
-        <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 text-white items-center'>
-          <div>
-            <img src={strMealThumb} alt='' />
-          </div>
-          <div className='p-4'>
-            <h2 className='text-3xl font-semibold'>
-              Cooking instruction for {strMeal}
-            </h2>
-            <p className='text-xl mt-12'>{strInstructions}</p>
-            <div className='mt-5'>
-              <LoadIngrediants meal={meal}></LoadIngrediants>
-            </div>
+      {loading ? (
+        <Spinner></Spinner>
+      ) : (
+        <div className='bg-[#1B2021] min-h-screen grid content-center'>
+          <div className='container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 text-white items-center'>
+            <motion.div
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <img src={strMealThumb} alt='' />
+            </motion.div>
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className='p-4'
+            >
+              <h2 className='text-3xl font-semibold'>
+                Cooking instruction for {strMeal}
+              </h2>
+              <p className='text-xl mt-12'>{strInstructions}</p>
+              <div className='mt-5'>
+                <LoadIngrediants meal={meal}></LoadIngrediants>
+              </div>
+            </motion.div>
           </div>
         </div>
-      </div>
-      )
-}
+      )}
     </>
   )
 }
