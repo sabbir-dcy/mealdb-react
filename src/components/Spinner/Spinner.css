@@ -1,34 +1,22 @@
-@keyframes rotation {
+@keyframes spin {
   0% {
-
     transform: rotate(0deg);
   }
-
   25% {
 
     transform: rotate(360deg);
-  
-
   }
   50% {
-
     transform: rotate(calc(360deg * 2));
-
-
-
-
   } 
   75% {
     transform: rotate(calc(360deg * 3));
-
   }
   100% {
     transform: rotate(calc(360deg * 4));
-
-
   }
 }
 
 .shape {
-  animation: rotation 5s infinite;
+  animation: spin 5s infinite;
 }

@@ -64,7 +64,7 @@ function LoadIngrediants({ meal }) {
     const ingrediant = meal[`strIngredient${i}`]
     if (ingrediant) ingrediants.push(ingrediant)
   }
-  return <p>ingrediants : {ingrediants.join(', ')}</p>
+  return <p className='text-xl text-zinc-400'>Ingrediants : {ingrediants.join(', ')}</p>
 }
 
 export default MealDetails
